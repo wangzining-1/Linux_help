@@ -1,0 +1,7 @@
+conda虚拟环境中环境变量设置
+conda虚拟环境中可以单独设置当前环境的环境变量，只有当前环境被激活(conda activate)时，自定义设置的环境变量才起作用，当conda deactivate后自定义的环境变量会自动清除。
+
+可以使用conda env config vars set my_var=value设置当前虚拟环境中的自定义环境变量。
+但是设置完环境变量后必须重新激活环境conda activate env_name。
+如果要查看自定义的环境变量是否设置生效可以用echo %my_var%（在Windows命令行使用%%这种形式）或者conda evn config vars list，conda evn config vars list会列出当前虚拟环境中所有自定义的环境变量。
+还可以通过-n指定要给那个虚拟环境设置自定义环境变量，例如：在虚拟环境conda env config vars set my_test_var=123 -n env_test_var
